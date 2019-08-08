@@ -1,0 +1,13 @@
+<form>
+  {{yield
+    (
+      hash
+        submit=(
+          component
+            "x-button"
+            type="submit"
+            data-test-id="submit-btn"
+        )
+    )
+  }}
+</form>

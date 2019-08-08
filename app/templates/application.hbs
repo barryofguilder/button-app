@@ -1,5 +1,34 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+<h1>Button App</h1>
+
+<p>Use the dev tools to inspect the buttons below</p>
+
+<div style="margin-top: 30px;">
+  <p>Button by itself using the default `type` of "button" and `data-test-id` of "button".</p>
+  <p>&lt;XButton&gt;Default Button&lt;/XButton&gt;</p>
+  <XButton>Default Button</XButton>
+</div>
+
+<div style="margin-top: 30px;">
+  <p>
+    Button overriding `type` with "submit" and `data-test-id` with "submit-btn". The `type` attribute
+    is not being overriden (still using default of "button"). The `data-test-id` attribute is
+    correctly being overriden with "submit-btn".
+  </p>
+  <p>&lt;XButton type="submit" data-test-id="submit-btn"&gt;Default Button&lt;/XButton&gt;</p>
+  <XButton type="submit" data-test-id="submit-btn">Test Button</XButton>
+</div>
+
+<div style="margin-top: 30px;">
+  <p>
+    Button being yielded with the `component` helper overriding `type` with "submit" and `data-test-id`
+    with "submit-btn". Neither attribute is being overriden and are still displaying the defaults of "button".
+  </p>
+  <p>&lt;XForm as |Form|&gt;&lt;Form.submit&gt;Save&lt;/Form.submit&gt;&lt;/XForm&gt;</p>
+  <XForm as |Form|>
+    <Form.submit>
+      Save
+    </Form.submit>
+  </XForm>
+</div>
 
 {{outlet}}
